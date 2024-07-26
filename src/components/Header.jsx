@@ -23,7 +23,7 @@ const Header = () => {
     const navigate = useNavigate();
     let { user, fetchUser } = UrlState();
     let { loading, fn: logoutFn } = useFetch(Logout)
-
+    console.log('Header', user)
 
     const handleLogout = () => {
         logoutFn().then(() => {
@@ -43,15 +43,15 @@ const Header = () => {
                         <Button onClick={() => navigate('/auth')}>Login</Button> :
                         <DropdownMenu>
                             <DropdownMenuTrigger className='w-10 overflow-hidden rounded-full'><Avatar>
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>GK</AvatarFallback>
+                                <AvatarImage src={user?.user_metadata?.profile_pic} />
+                                <AvatarFallback>{user?.user_metadata?.name[0].toUpperCase()}</AvatarFallback>
                             </Avatar>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent>
                                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>{user?.user_metadata?.name}</DropdownMenuItem>
-                                <DropdownMenuItem><Link to={'/dashboard'} className='flex'><LinkIcon className='mr-2 h-4 w-4'/> My Links</Link></DropdownMenuItem>
+                                <DropdownMenuItem><Link to={'/dashboard'} className='flex'><LinkIcon className='mr-2 h-4 w-4' /> My Links</Link></DropdownMenuItem>
                                 <DropdownMenuItem className='text-red-400' onClick={() => handleLogout()}>
                                     <LogOut className='mr-2 h-4 w-4' ></LogOut><span>Logout</span></DropdownMenuItem>
                             </DropdownMenuContent>

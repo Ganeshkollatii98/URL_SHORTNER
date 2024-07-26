@@ -75,12 +75,12 @@ const Link = () => {
       <div className="flex flex-col gap-8 sm:flex-row justify-between">
         <div className="flex flex-col items-start gap-8 rounded-lg sm:w-2/5">
           <span className="text-6xl font-extrabold hover:underline cursor-pointer">{url?.title}</span>
-          <a className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer " href={`https://trimrr.in/${link}`} target="_blank">https://trimrr.in/{link}</a>
+          <a className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer " href={`https://trimmr.netlify.app/${link}`} target="_blank">https://trimmr.netlify.app/{link}</a>
           <a className="flex items-center gap-1 hover:underline cursor-pointer" href={url?.original_url} target="_blank"><LinkIcon className='p-1' />{url?.original_url}</a>
           <span className="flex items-end font-extralight text-sm">{new Date(url?.created_at).toLocaleString()}</span>
 
           <div className='flex gap-2'>
-            <Button variant='ghost' onClick={() => navigator.clipboard.writeText(`https://trimrr.in/${url?.short_url}`)}><Copy /></Button>
+            <Button variant='ghost' onClick={() => navigator.clipboard.writeText(`https://trimmr.netlify.app/${url?.short_url}`)}><Copy /></Button>
             <Button variant='ghost' onClick={() => downloadImage()}><Download /></Button>
             <Button variant='ghost' onClick={() => { fnDelete() }}>
               {loading ? <BeatLoader size={10} color='#36d7b7' /> : <Trash />}
