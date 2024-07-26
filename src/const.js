@@ -1,0 +1,1 @@
+export const TRIMMR_URL = "https://trimmr.netlify.app/";
