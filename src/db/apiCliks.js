@@ -26,7 +26,7 @@ export const storeClicks = async ({ id, originalUrl }) => {
         const res = parser.getResult();
         const device = res.type || "desktop"; // Default to desktop if type is not detected
 
-        const response = await fetch(`https://api.ipdata.co/8.8.8.8?api-key=${IPAPI_API_KEY}`);
+        const response = await fetch(`https://ipapi.co/json/`);
         const { city, country_name: country } = await response.json();
 
         // Record the click
