@@ -76,7 +76,7 @@ const Link = () => {
       <div className="flex flex-col gap-8 sm:flex-row justify-between">
         <div className="flex flex-col items-start gap-8 rounded-lg sm:w-2/5">
           <span className="text-6xl font-extrabold hover:underline cursor-pointer">{url?.title}</span>
-          <a className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer " href={`${TRIMMR_URL}${link}`} target="_blank">${TRIMMR_URL}{link}</a>
+          <a className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer " href={`${TRIMMR_URL}${link}`} target="_blank">{`${TRIMMR_URL}${link}`}</a>
           <a className="flex items-center gap-1 hover:underline cursor-pointer" href={url?.original_url} target="_blank"><LinkIcon className='p-1' />{url?.original_url}</a>
           <span className="flex items-end font-extralight text-sm">{new Date(url?.created_at).toLocaleString()}</span>
 
